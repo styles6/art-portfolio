@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+/* header {
+    padding: 1em; */
+    /* background-color: rgba(51, 51, 51, 0.8); */
+    /* background-image: url('background.jpg') no-repeat center center fixed; */
+    /* color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(74, 53, 53);
+    font-size: 20px;
+} */
+
+/* General reset and styling from your code */
+
+h1 {
+    padding: 0.5em; /* Adjusted padding */
+    background-color: rgba(187, 70, 59, 0.35); /* Increased opacity */
+    color: white; /* Ensure this contrasts well with the background */
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Optional: remove if you want full visibility */
+    -webkit-text-stroke: 1px rgb(233, 134, 134); /* Consider adjusting or removing */
+    font-size: 3.5em; /* Adjusted font size for better visibility */
+}
+
+h4 {
+    color: white;
+    size: 50px;
+    
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-top: 2em;
+    flex-wrap: wrap;
+}
+
+.thumbnail img {
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 5px; 
+}
+.thumbnail {
+    width: 400px;
+    cursor: pointer;
+    transition: transform 0.25s ease-in-out;
+}
+
+.thumbnail:hover {
+    transform: scale(1.07);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+.modal img {
+    max-width: 60%; /* Adjust this percentage as needed */
+    max-height: 60vh; /* Keeps the image within the viewport height */
+    width: auto;
+    height: auto;
+    margin-top: 2em;
+    border-radius: 10px; /* Optional: for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow */
+}
+
+.modal p {
+    margin-top: 1em;
+    font-size: 1.2em;
+    max-width: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+#modal-desc {
+    font-family: 'Georgia', serif; /* Change to your preferred font */
+    font-size: 1.2em; /* Adjust the size as needed */
+    color: #F5D0A9; /* Choose a color that complements the modal */
+    text-align: left; /* Centers the text within the modal */
+    padding: 1em; /* Adds some spacing around the text */
+    line-height: 1.5; /* Adjusts line height for readability */
+    max-width: 80%; /* Limits width for easier reading */
+    margin: 0 auto; /* Centers the description text */
+    text-indent: 30px;
+}
+

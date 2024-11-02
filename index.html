@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="header">Samantha Tyles's Art Portfolio</h1>
+        <h4 id="instructions"> Click on each photo to see a description!</h4>
+    </header>
+ 
+    <div class="gallery">
+        <div class="thumbnail" onclick="openModal('flower1.jpeg', 'art1')">
+            <img src="flower1.jpeg" alt="Art Piece 1">
+        </div>
+        <div class="thumbnail" onclick="openModal('flower2.jpeg', 'art2')">
+            <img src="flower2.jpeg" alt="Art Piece 2">
+        </div>
+        <div class="thumbnail" onclick="openModal('barn.jpeg', 'art3')">
+            <img src="barn.jpeg" alt="Art Piece 3">
+        </div>
+        <div class="thumbnail" onclick="openModal('hammer.jpeg', 'art4')">
+            <img src="hammer.jpeg" alt="Art Piece 4">
+        </div>
+        <div class="thumbnail" onclick="openModal('clay.jpeg', 'art5')">
+            <img src="clay.jpeg" alt="Art Piece 5">
+        </div>
+        <div class="thumbnail" onclick="openModal('tattoo.jpeg', 'art6')">
+            <img src="tattoo.jpeg" alt="Art Piece 6">
+        </div>
+        <div class="thumbnail" onclick="openModal('portrait.JPG', 'art7')">
+            <img src="portrait.JPG" alt="Art Piece 7">
+        </div>
+        <div class="thumbnail" onclick="openModal('3portrait.jpeg', 'art8')">
+            <img src="3portrait.jpeg" alt="Art Piece 8">
+        </div>
+        <div class="thumbnail" onclick="openModal('store.jpeg', 'art9')">
+            <img src="store.jpeg" alt="Art Piece 9">
+        </div>
+        <div class="thumbnail" onclick="openModal('procreate.jpg', 'art10')">
+            <img src="procreate.jpg" alt="Art Piece 10">
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modal-img" src="" alt="Full Art Piece">
+        <p id="modal-desc"></p>
+    </div>
+
+    <script>
+        const descriptions = {
+            'art1': 'This piece represents an experiment with restrictions. Instead of a pencil’s forgiving quality, I worked with a ballpoint pen, which required precision in each line. To guide the viewer’s focus, I used shadows and the full scale of values, emphasizing contrasts around the flower to ensure it remained visually distinct from the white paper. By choosing this approach, I focused on problem-solving within limits, refining my control over value and depth. The vignette effect creates a center-focused composition, making the flower appear even more vibrant against the unmarked background.',
+            'art2': 'This floral painting, a birthday gift for a close friend, captures a bouquet she shared from a tulip field visit. Recreating the vibrant arrangement in acrylic paint, I aimed to freeze the temporary lifespan of flowers, turning the gift into a lasting keepsake. I selected this medium to highlight the layered textures and subtle transitions of color within the flowers. In painting each bloom, I worked to convey the freshness and warmth of the original flowers, transforming the beauty into a piece that maintains its significance beyond the moment.',
+            'art3': 'This acrylic painting draws from my daily experiences working on a farm, using contrasting shadows to depict the barn’s inviting yet rustic ambiance. I intended to bring this simple structure to life through rich textures and careful light dynamics, creating an immersive effect. I crafted a visual tension that draws viewers’ eyes through the open barn door by employing thick brushstrokes for the barn’s wooden elements and soft layers for sunlight. The piece becomes more than a still life, offering a glimpse into an everyday scene transformed by light, color, and an appreciation of texture.',
+            'art4': 'This charcoal drawing of a hammer was a hands-on study in rendering light, shadow, and texture in grayscale. Working on a large sheet, I focused on replicating the contrast between the metal head and the wooden handle. I used both black and white charcoal to heighten the effects of light on different surfaces, emphasizing the hammer’s ruggedness. This was a particularly engaging process for me as I blended shades with my fingers, finding organic transitions between light and dark values. The resulting piece demonstrates how a simple object can reveal intricate details through shading and texture manipulation.',
+            'art5': 'This piece is created out of repurposed clay, measuring at about 5" in length, 4" tall, and 4.5" in width. This headless clay figure, adorned with collaged words, represents a universal approach to identity. By omitting the head, I aimed to create an inclusive form that could signify anyone. The repurposed clay, combined with Mod Podge and newspaper cutouts, adds a textured, almost mosaic-like surface. Words like "upbeat" and "dream" layer the piece with depth and intention, suggesting that identity is multifaceted. This sculpture represents resilience and optimism, creating a visually intriguing form that resonates on a personal and universal level.',
+            'art6': 'This digital line-art bouquet, drawn on an iPad using Procreate, represents my family’s birth flowers, including chrysanthemum, violet, morning glory, lily, and iris. I created this piece as a tattoo design for my sister, a permanent tribute to our shared connection. Each flower holds a personal connection, while the overall composition remains minimalistic to keep the visual style clean and elegant. This piece demonstrates how design can communicate sentiment and identity in a refined way, becoming a part of my sister’s expression.',
+            'art7': 'This detailed graphite portrait of my great-grandmother, drawn from a photograph of her in Poland, is a deeply personal piece. It captures her in her youth, immortalizing her on an 18x24" sheet. Creating this allowed me to honor her memory for my family, especially my grandparents, who framed the piece as a cherished heirloom. I meticulously recreated her likeness, focusing on realistic details to make her expression and features as lifelike as possible. This piece illustrates my ability to use art for personal storytelling and heritage, creating connections across generations.',
+            'art8': 'My triple self-portrait conveys the theme of losing one’s sense of self. Within this piece are three versions of my face—two of which capture a blend of apathy with an underlying sadness. However, the third depiction of myself introduces a different face in a blurred, foggy manner. This blurry image is a meataphor for the reflection I see on a daily basis, symbolizing the challenges associated with my self-image. It reflects the ambiguity of my self-perception. Through the use of acrylic paint on canvas, the application of white gel pens, the strokes of various paint brushes and spatulas, and the collaging of photos, I created a work that visually embodies my internal struggles. By incorporating collaged photos, I introduce an element of reality, further blurring the lines between the visual representation and the tangible aspects of my identity. This mixed-media approach serves as a creative outlet and reflects the unpredictable, varying nature of the struggle depicted.',
+            'art9': 'This acrylic still life of a grocery shelf combines realism with an unbalanced composition, leveraging asymmetry to guide the viewer’s eye. Inspired by everyday scenes, I used acrylic paint and white gel pens to depict products on the shelf in meticulous detail. By using a triangular layout within the scene, I created a dynamic path for the viewer to follow, subtly leading the gaze throughout the piece. This composition, paired with my attention to detail, transforms a simple grocery scene into a thoughtfully designed work that celebrates everyday life with a touch of visual intrigue.',
+            'art10': 'This piece was done as a still-life of a calming lake scene. I used this piece as a way to experiment with Procreate on my iPad with my Apple Pencil. Through drawing this piece, I was challenged by the different textures of the image, such as the water, the grass, and the tree. I was also met with the challenge of gathering colors of the daytime hue, with a bit of a golden glow from the sun. I wanted to portray the image as a glowy day on a lake, while it also has they foggy view in the background as well, creating contrast.',
+        };
+
+        function openModal(imageSrc, artId) {
+            document.getElementById('modal').style.display = 'flex';
+            document.getElementById('modal-img').src = imageSrc;
+            document.getElementById('modal-desc').innerText = descriptions[artId];
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
